@@ -57,7 +57,7 @@
         "Start-Process -FilePath \"$dir\\HideRun.vbs\""
     ],
     "post_uninstall": [
-        "Get-Process -Name \"aria2c.exe\" | Stop-Process",
+        "Get-Process -Name \"aria2c\" | Stop-Process",
         "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\""
     ]
 }
