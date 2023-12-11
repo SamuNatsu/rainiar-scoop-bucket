@@ -16,7 +16,6 @@
             "extract_dir": "aria2-1.37.0-win-32bit-build1"
         }
     },
-    "bin": "aria2c.exe",
     "checkver": {
         "github": "https://github.com/aria2/aria2",
         "regex": "/release-(?:[\\d.]+)/aria2-(?<version>[\\d.]+)-win-64bit-build(?<build>[\\d]+)\\.zip",
