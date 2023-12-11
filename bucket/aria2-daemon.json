@@ -54,7 +54,7 @@
         "$shortcut.TargetPath = \"$dir\\HideRun.vbs\"",
         "$shortcut.Save()",
         "Move-Item \"$dir\\HideRun.lnk\" \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\"",
-        "Start-Process -FilePath \"$dir\\HideRun.lnk\""
+        "Start-Process -FilePath \"$dir\\HideRun.vbs\""
     ],
     "post_uninstall": [
         "Get-Process -Name \"aria2c.exe\" | Stop-Process",
