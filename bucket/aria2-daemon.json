@@ -48,7 +48,7 @@
         "}"
     ],
     "post_install": [
-        "Set-Content -Path \"$dir\\HideRun.vbs\" -Value \"CreateObject(`\"WScript.Shell`\").Run `\".\\aria2c.exe`\",0\"",
+        "Set-Content -Path \"$dir\\HideRun.vbs\" -Value \"CreateObject(`\"WScript.Shell`\").Run `\".\\aria2c.exe --conf-path=aria2.conf`\",0\"",
         "$shell = New-Object -ComObject WScript.Shell",
         "$shortcut = $shell.CreateShortcut(\"$dir\\HideRun.lnk\")",
         "$shortcut.TargetPath = \"$dir\\HideRun.vbs\"",
