@@ -1,5 +1,5 @@
 {
-    "##": "Aria2 with persist config and autostart",
+    "##": "Aria2 with persist config and daemon",
     "version": "1.37.0-1",
     "description": "Lightweight multi-protocol & multi-source command-line download utility",
     "homepage": "https://aria2.github.io/",
@@ -33,5 +33,15 @@
                 "extract_dir": "aria2-$matchVersion-win-32bit-build$matchBuild"
             }
         }
-    }
+    },
+    "persist": [
+        "aria2.conf",
+        "aria2.log",
+        "aria2.session"
+    ],
+    "post_install": [
+        "$filePath = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.defualt.conf\"",
+        "$fileContents = Invoke-RestMethod -Uri \"$filePath\" -Method Get",
+        "$fileContent.content | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } | Set-Content \"$dir\\aria2.conf\""
+    ]
 }
