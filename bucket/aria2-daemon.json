@@ -40,7 +40,7 @@
         "aria2.session"
     ],
     "post_install": [
-        "$filePath = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.defualt.conf\"",
+        "$filePath = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.default.conf\"",
         "$fileContents = Invoke-RestMethod -Uri \"$filePath\" -Method Get",
         "$fileContent.content | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } | Set-Content \"$dir\\aria2.conf\""
     ]
