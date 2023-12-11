@@ -52,11 +52,11 @@
         "$shortcut = $shell.CreateShortcut(\"$dir\\HideRun.vbs\")",
         "$shortcut.TargetPath = \"$dir\\HideRun.lnk\"",
         "$shortcut.Save()",
-        "Move-Item \"$dir\\HideRun.lnk\" \"$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\aria2.lnk\"",
+        "Move-Item \"$dir\\HideRun.lnk\" \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\"",
         "Start-Process -FilePath \"$dir\\HideRun.lnk\""
     ],
     "post_uninstall": [
-        "Get-Process -Name "aria2c.exe" | Stop-Process",
-        "Remove-Item \"$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\aria2.lnk\""
+        "Get-Process -Name \"aria2c.exe\" | Stop-Process",
+        "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\""
     ]
 }
