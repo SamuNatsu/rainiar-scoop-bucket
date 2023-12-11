@@ -44,6 +44,8 @@
         "  $url = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.default.conf\"",
         "  $data = Invoke-RestMethod -Uri \"$url\" -Method Get",
         "  $data.content | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } | Set-Content \"$dir\\aria2.conf\"",
+        "  Set-Content -Path \"$dir\\aria2.log\" -Value \"\"",
+        "  Set-Content -Path \"$dir\\aria2.session\" -Value \"\"",
         "}"
     ]
 }
