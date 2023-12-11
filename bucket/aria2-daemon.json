@@ -39,9 +39,11 @@
         "aria2.log",
         "aria2.session"
     ],
-    "post_install": [
-        "$filePath = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.default.conf\"",
-        "$fileContents = Invoke-RestMethod -Uri \"$filePath\" -Method Get",
-        "$fileContent.content | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } | Set-Content \"$dir\\aria2.conf\""
+    "pre_install": [
+        "if (!(Test-Path \"$dir\\aria2.conf\")) {",
+        "  $url = \"https://api.github.com/repos/SamuNatsu/rainiar-scoop-bucket/contents/static/aria2.default.conf\"",
+        "  $data = Invoke-RestMethod -Uri \"$url\" -Method Get",
+        "  $data.content | % { [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($_)) } | Set-Content \"$dir\\aria2.conf\"",
+        "}"
     ]
 }
