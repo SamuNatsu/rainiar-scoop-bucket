@@ -57,8 +57,10 @@
         "Copy-Item \"$dir\\HideRun.lnk\" \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\"",
         "Start-Process \"$dir\\HideRun.lnk\""
     ],
+    "pre_uninstall": [
+        "Get-Process -Name \"aria2c\" | Stop-Process"
+    ],
     "post_uninstall": [
-        "Start-Process powershell -Verb RunAs -ArgumentList \"-Command Get-Process -Name 'aria2c' | Stop-Process\"",
         "Remove-Item \"$env:APPDATA\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\aria2.lnk\""
     ]
 }
