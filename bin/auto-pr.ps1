@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "SamuNatsu/rainiar-scoop-bucket:main"
+    [String]$upstream = "SamuNatsu/rainiar-scoop-bucket:master"
 )
 
 if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
