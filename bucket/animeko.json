@@ -1,12 +1,12 @@
 {
-    "version": "5.7.1",
+    "version": "6.0.0",
     "description": "集找番、追番、看番的一站式弹幕追番平台，云收藏同步 (Bangumi)，离线缓存，BitTorrent，弹幕云过滤。",
     "homepage": "https://myani.org/",
     "license": "AGPL-3.0-only",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/open-ani/animeko/releases/download/v5.7.1/ani-5.7.1-windows-x86_64.zip",
-            "hash": "3d32c84155315ff52fa1ec647e9c3ec56acf2bcef0cd48b074e9056cb908d83a",
+            "url": "https://github.com/open-ani/animeko/releases/download/v6.0.0/ani-6.0.0-windows-x86_64.zip",
+            "hash": "6b928cd7d6acccae8462ad538e6b60a07026999920470345731de8536020df8a",
             "extract_dir": "Ani"
         }
     },
